@@ -29,6 +29,7 @@ $(touch temp018)
 %7cpython -c 'import os;os.mknod("temp028");p=subprocess.call(["/bin/sh","-i"]);'&
 %3bpython -c 'import os;os.mknod("temp029");p=subprocess.call(["/bin/sh","-i"]);'&
 ;python -c 'import os;os.mknod("temp030");p=subprocess.call(["/bin/sh","-i"]);'&
+&(touch temp031)
 
 # In some cases, the processes might not have access to write to the the directory,
 # so see if it can write into the tmp directory; check there for a temp0* file creation
@@ -58,3 +59,4 @@ $(touch \tmp\temp018)
 %7cpython -c 'import os;os.mknod("\tmp\temp028");p=subprocess.call(["/bin/sh","-i"]);'&
 %3bpython -c 'import os;os.mknod("\tmp\temp029");p=subprocess.call(["/bin/sh","-i"]);'&
 ;python -c 'import os;os.mknod("\tmp\temp030");p=subprocess.call(["/bin/sh","-i"]);'&
+&(touch \tmp\temp031)
